@@ -136,10 +136,14 @@ UTP-Artificial-Intelligence/
 │
 ├── all_experiments/
 │   ├── lab1.ipynb
+│   ├── lab2.ipynb
+│   ├── lab3.ipynb
 │   └── utils/
 │
 ├── results/
-│   └── lab01/
+│   ├── lab01/
+│   ├── lab02/
+│   └── lab03/
 │
 └── README.md
 ```
