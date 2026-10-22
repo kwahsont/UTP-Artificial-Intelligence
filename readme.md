@@ -120,6 +120,78 @@ The lab uses the airline network datasets:
 - `lab01-03_airports.csv`
 - `lab01-03_routes.csv`
 
+
+## Lab 04: Fuzzy Logic and ANFIS with Air-Quality Data
+
+This lab explores the application of fuzzy logic and Adaptive Neuro-Fuzzy Inference Systems (ANFIS) using air-quality data. It combines expert-defined rules with data-driven prediction to develop a ventilation controller and predict carbon-monoxide concentration.
+
+### Objectives
+- Preprocess air-quality data by handling missing values and removing empty rows and columns.
+- Implement a Mamdani fuzzy logic controller using temperature and relative humidity to determine ventilation demand.
+- Define triangular membership functions and expert rules for low, medium, and high ventilation levels.
+- Validate the fuzzy controller using fixed operating points and a control-surface visualisation.
+- Implement a first-order Sugeno ANFIS model to predict carbon-monoxide concentration from sensor readings.
+- Compare ANFIS models with linear regression using RMSE and MAE evaluation metrics.
+
+### Dataset
+- `all_datasets/lab04-AirQuality.csv`
+
+The dataset contains hourly air-quality sensor readings from the UCI Air Quality dataset. Preprocessing includes handling semicolon-separated values, decimal commas, missing-value markers (`-200`), and empty rows.
+
+**Prediction task:**
+- **Target:** `CO(GT)`
+- **Input features:** `PT08.S1(CO)` and `PT08.S2(NMHC)`
+
+Temperature (`T`) and relative humidity (`RH`) are used as inputs for the fuzzy ventilation controller.
+
+### Algorithms and Techniques
+- **Mamdani Fuzzy Logic:** Uses temperature and relative humidity, triangular membership functions, expert-defined rules, minimum for logical AND, maximum to combine rules, and centroid defuzzification.
+- **Sugeno ANFIS:** Uses Gaussian membership functions and first-order linear rule outputs to model nonlinear relationships in the sensor data.
+- **Linear Regression:** Serves as the baseline model for comparison.
+- **Data Splitting:** Divides complete observations into training, validation, and test sets using a 70/15/15 ratio with random seed 42.
+- **Feature Standardisation:** Uses statistics calculated from the training set only.
+- **Model Selection:** Selects the ANFIS configuration based on validation RMSE before evaluating it on the test set.
+
+### Evaluation Metrics
+- Root Mean Squared Error (RMSE)
+- Mean Absolute Error (MAE)
+- Fuzzy controller validation using fixed operating points
+- Visual comparison of predicted and actual carbon-monoxide concentrations
+
+### Reference Results
+
+| Model | Validation RMSE | Test RMSE | Test MAE |
+|---|---:|---:|---:|
+| Linear Regression | 0.5103 | 0.5365 | 0.3821 |
+| ANFIS (2 Membership Functions) | 0.4550 | 0.4715 | 0.3264 |
+| ANFIS (3 Membership Functions) | 0.4489 | 0.4672 | 0.3246 |
+
+The ANFIS model with three membership functions achieves the lowest validation RMSE and is selected as the final model. Based on the activity's reference results, it improves test RMSE by approximately 12.9% compared with linear regression.
+
+### Notebook
+- `all_experiments/lab04_fuzzy_anfis_worked.ipynb`
+
+### Generated Results
+Results are saved in `results/lab04/`:
+
+- `temperature_humidity.png` - Scatter plot of temperature against relative humidity.
+- `fuzzy_memberships.png` - Membership functions for temperature, humidity, and ventilation demand.
+- `fuzzy_fixed_points.csv` - Outputs for selected fuzzy-controller test cases.
+- `fuzzy_control_surface.png` - Visualisation of ventilation demand across different conditions.
+- `split.csv` - Training, validation, and test split assignments.
+- `metrics.csv` - Model evaluation metrics.
+- `predicted_vs_actual.png` - Predicted versus actual carbon-monoxide concentrations.
+
+### Libraries and Tools
+- Python
+- Jupyter Notebook
+- NumPy
+- Pandas
+- Matplotlib
+- SciPy
+- scikit-learn
+
+
 ## Repository Structure
 
 ```text
@@ -138,12 +210,14 @@ UTP-Artificial-Intelligence/
 │   ├── lab1.ipynb
 │   ├── lab2.ipynb
 │   ├── lab3.ipynb
+│   ├── lab4.ipynb
 │   └── utils/
 │
 ├── results/
 │   ├── lab01/
 │   ├── lab02/
-│   └── lab03/
+│   ├── lab03/
+│   └── lab04/
 │
 └── README.md
 ```
