@@ -18,7 +18,7 @@ The labs cover different Artificial Intelligence concepts and techniques, with p
 | Lab 01 | Uninformed Search | Completed |
 | Lab 02 | Informed Search | Completed |
 | Lab 03 | Search Engineering | Completed |
-| Lab 04 | To be updated | Coming Soon |
+| Lab 04 | Fuzzy Logic | Completed |
 | Lab 05 | To be updated | Coming Soon |
 | Lab 06 | To be updated | Coming Soon |
 | Lab 07 | To be updated | Coming Soon |
