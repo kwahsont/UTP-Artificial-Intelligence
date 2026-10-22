@@ -169,7 +169,7 @@ Temperature (`T`) and relative humidity (`RH`) are used as inputs for the fuzzy 
 The ANFIS model with three membership functions achieves the lowest validation RMSE and is selected as the final model. Based on the activity's reference results, it improves test RMSE by approximately 12.9% compared with linear regression.
 
 ### Notebook
-- `all_experiments/lab04_fuzzy_anfis_worked.ipynb`
+- `all_experiments/lab4.ipynb`
 
 ### Generated Results
 Results are saved in `results/lab04/`:
