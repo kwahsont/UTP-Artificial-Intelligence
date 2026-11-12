@@ -20,7 +20,7 @@ The labs cover different Artificial Intelligence concepts and techniques, with p
 | Lab 03 | Search Engineering | Completed |
 | Lab 04 | Fuzzy Logic | Completed |
 | Lab 05 | Robotics | Completed |
-| Lab 06 | To be updated | Coming Soon |
+| Lab 06 | OCR Evalutaion | Completed |
 | Lab 07 | To be updated | Coming Soon |
 | Lab 08 | To be updated | Coming Soon |
 
@@ -44,6 +44,7 @@ UTP-Artificial-Intelligence/
 │   ├── lab3.ipynb
 │   ├── lab4.ipynb
 │   ├── lab5.ipynb
+│   ├── lab6.ipynb
 │   └── utils/
 │
 ├── results/
@@ -51,7 +52,8 @@ UTP-Artificial-Intelligence/
 │   ├── lab02/
 │   ├── lab03/
 │   ├── lab04/
-│   └── lab05/
+│   ├── lab05/
+│   └── lab06/
 │
 └── README.md
 ```
