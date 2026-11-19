@@ -22,7 +22,7 @@ The labs cover different Artificial Intelligence concepts and techniques, with p
 | Lab 05 | Robotics | Completed |
 | Lab 06 | OCR | Completed |
 | Lab 07 | NLP | Completed |
-| Lab 08 | To be updated | Coming Soon |
+| Lab 08 | Regression Algorithm | Completed |
 
 ## Repository Structure
 
@@ -46,6 +46,7 @@ UTP-Artificial-Intelligence/
 │   ├── lab5.ipynb
 │   ├── lab6.ipynb
 │   ├── lab7.ipynb
+│   ├── lab8.ipynb
 │   └── utils/
 │
 ├── results/
@@ -55,7 +56,8 @@ UTP-Artificial-Intelligence/
 │   ├── lab04/
 │   ├── lab05/
 │   ├── lab06/
-│   └── lab07/
+│   ├── lab07/
+│   └── lab08/
 │
 └── README.md
 ```
